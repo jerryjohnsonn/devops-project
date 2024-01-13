@@ -10,13 +10,13 @@ const UserList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get('http://localhost:5000/users');
+    const response = await axios.get('http://127.0.0.1:5000/users');
     setUser(response.data);
   };
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`http://127.0.0.1:5000/users/${id}`);
       getUsers();
     } catch (error) {
       console.log(error);
